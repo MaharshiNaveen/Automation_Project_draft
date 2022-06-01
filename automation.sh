@@ -79,7 +79,7 @@ echo "installing $service"
 /etc/init.d/$service start
 fi
 
-if [ -e "/etc/init.d/$service" ] && (($(ps -ef | grep $service | wc -l) > 0 ))
+if [ -e "/etc/init.d/$service" ] && (($( ! ps -ef | grep $service | wc -l) > 0 ))
 then
 automate
 else
